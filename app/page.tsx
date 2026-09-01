@@ -5,12 +5,10 @@ export default function Home() {
     <main className="mx-auto text-center w-full">
       {/* Top Nav Bar */}
       <div className="w-full p-8 flex items-left">
-        <a href="https://tenderpay.io/" className="inline-block">
-          <Image src="/Tender_Logo_Inverted_With_Type.svg" alt="Tender Logo" width={192} height={64}/>
-        </a>
+        <TenderLogo width={192} height={64} className="inline-block"/>
       </div>
       
-      <div className="mt-20 md:mt-40 mx-auto px-10">
+      <div className="mt-20 md:mt-40 mx-auto px-10 md:px-16">
         <h1 className="text-4xl md:text-5xl lg:text-6xl text-gray-900 font-bold font-jakarta">Pay with crypto. For real this time.</h1>
       </div>
 
@@ -25,13 +23,15 @@ export default function Home() {
       </section>
 
       {/* Get in Touch */}
-      <a href="mailto:liam@tenderpay.io" className="inline-block my-24 rounded-full bg-[#ec9614] px-8 py-5 text-white text-xl font-medium hover:bg-[#ffc56d] transition-colors">
-        Get in Touch
-      </a>
+      <section className="py-24 w-full">
+        <a href="mailto:liam@tenderpay.io" className="inline-block rounded-full bg-[#ec9614] px-12 py-6 text-white text-2xl font-bold font-inter hover:bg-[#ffc56d] shadow-lg hover:scale-101 transition-all duration-100">
+          Get in Touch
+        </a>
+      </section>
 
       {/* Footer */}
       <footer className="w-full bg-gray-100 p-6 flex items-center justify-between">
-        <Image src="/Tender_Logo_Inverted_With_Type.svg" alt="Tender Logo" width={128} height={42} className="mt-auto"/>
+        <TenderLogo width={128} height={42} className="mt-auto"/>
         <div className="flex flex-col items-end">
           <a href="https://www.linkedin.com/company/tender-hq" target="_blank" rel="noopener noreferrer" className="mt-2">
             <Image src="/LinkedIn_Icon.svg" alt="LinkedIn" width={32} height={32}/>
@@ -52,22 +52,10 @@ function FeatureCard({ title, description }: { title: string; description: strin
   );
 }
 
-/* 
-  - Logo with type, round off corners on logos and reexport
-  - Immediately into description hero text. Tagline. Maybe "Pay with crypto. For real this time."
-  - Something about the button that sits alongside Apple Pay and PayPal.
-  - Features cards:
-    - Non-custodial. You control your funds.
-    - No centralized exchanges. No middle man. No risk of being frozen.
-    - Easy integration with SDKs
-    - Zero merchant fees. Customer pays 1.5%. Merchant pays nothing.
-  - Get in touch
-  - Copyright.
-
-  
-
-    Tender just works. YOu put up a button. 
-    You have the button link to your backend and send a simple API request based on the customers cart. This is done with an SDK function call.
-    You get back a transaction ID. You get a webhook when the transaction has completed meaning funds are already in your wallet.
-*/
-
+function TenderLogo({width, height, className}: {width: number; height: number; className?: string}) {
+  return (
+    <a href="https://tenderpay.io/" className={className}>
+      <Image src="/Tender_Logotype.svg" alt="Tender Logo" width={width} height={height}/>
+    </a>
+  )
+}

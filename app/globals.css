@@ -25,3 +25,9 @@ body {
   color: var(--foreground);
   font-family: var(--font-inter), sans-serif;
 }
+
+.pattern-dots {
+  background-color: white;
+  background-image: radial-gradient(circle, #e5e7eb 1px, transparent 1px);
+  background-size: 24px 24px;
+}

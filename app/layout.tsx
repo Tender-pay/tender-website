@@ -20,6 +20,7 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 export const metadata: Metadata = {
   title: "Tender",
   description: "Crypto payment processing. Non-custodial, atomic settlement, zero merchant fees.",
+  icons: "favicon.svg",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
